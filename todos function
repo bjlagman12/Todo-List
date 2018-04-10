@@ -1,0 +1,27 @@
+var todos= ['item 1','item 2','item 3']
+
+//display todos
+function displayTodos(){
+  console.log('my todos:',todos);
+}
+
+//add todos
+funtion addTodos (newtodo){
+  todos.push(newtodo);
+  console.log('my todos:', todos);
+}
+addTodos('test')
+
+//change todos
+funtion changeTodos (order,newtodo){
+  todos{order]=newtodo;
+  console.log('my todos:', todos);
+}
+changeTodos(0,'changed panda')
+
+// delete todos
+function remTodo (order){
+todos.splice(order,1);
+console.log('my todos:',todos);
+}
+remTodo(1)
