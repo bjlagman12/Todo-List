@@ -1,3 +1,4 @@
+// Code goes here
 var todos= ['item 1','item 2','item 3']
 
 //display todos
@@ -6,15 +7,15 @@ function displayTodos(){
 }
 
 //add todos
-funtion addTodos (newtodo){
+function addTodos (newtodo){
   todos.push(newtodo);
   console.log('my todos:', todos);
 }
 addTodos('test')
 
 //change todos
-funtion changeTodos (order,newtodo){
-  todos{order]=newtodo;
+function changeTodos (order,newtodo){
+  todos[order]=newtodo;
   console.log('my todos:', todos);
 }
 changeTodos(0,'changed panda')
@@ -24,4 +25,3 @@ function remTodo (order){
 todos.splice(order,1);
 console.log('my todos:',todos);
 }
-remTodo(1)
