@@ -9,19 +9,19 @@ function displayTodos(){
 //add todos
 function addTodos (newtodo){
   todos.push(newtodo);
-  console.log('my todos:', todos);
+  displayTodos();
 }
 addTodos('test')
 
 //change todos
 function changeTodos (order,newtodo){
   todos[order]=newtodo;
-  console.log('my todos:', todos);
+  displayTodos();
 }
 changeTodos(0,'changed panda')
 
-// delete todos
+// remove todos
 function remTodo (order){
-todos.splice(order,1);
-console.log('my todos:',todos);
+  todos.splice(order,1);
+  displayTodos();
 }
