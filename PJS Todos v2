@@ -25,3 +25,23 @@ function remTodo (order){
   todos.splice(order,1);
   displayTodos();
 }
+
+var todoList= 
+{
+  todos: ['item 1', 'item 2', 'item 3'],
+  displayTodos: function(){
+    console.log('My Todos',this.todos);
+  },
+  addTodos:function(newtodo){
+    this.todos.push(newtodo);
+    this.displayTodos();
+  },
+  changeTodos:function (order,newtodo){
+    this.todos[order]=newtodo;
+    this.displayTodos();
+  },
+  deleteTodos:function (order){
+    this.todos.splice(order,1);
+    this.displayTodos();
+  },
+}
