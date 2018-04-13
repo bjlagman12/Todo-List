@@ -44,4 +44,4 @@ var todoList=
     this.todos.splice(order,1);
     this.displayTodos();
   },
-}
+};
