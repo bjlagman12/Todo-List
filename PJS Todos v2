@@ -32,8 +32,11 @@ var todoList=
   displayTodos: function(){
     console.log('My Todos',this.todos);
   },
-  addTodos:function(newtodo){
-    this.todos.push(newtodo);
+  addTodos:function(texttodo){
+    this.todos.push({
+    todotext:'todotext'
+    completed: false
+    });
     this.displayTodos();
   },
   changeTodos:function (order,newtodo){
