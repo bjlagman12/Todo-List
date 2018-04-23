@@ -28,23 +28,27 @@ function remTodo (order){
 
 var todoList= 
 {
-  todos: ['item 1', 'item 2', 'item 3'],
+  todos: [],
   displayTodos: function(){
     console.log('My Todos',this.todos);
   },
-  addTodos:function(texttodo){
+  addTodos:function(todoText){
     this.todos.push({
-    todotext:'todotext'
+    todoText:todoText,
     completed: false
     });
     this.displayTodos();
   },
-  changeTodos:function (order,newtodo){
-    this.todos[order]=newtodo;
+  changeTodos:function (position,todo.Text){
+    this.todos[postion].todoText=todoText;
     this.displayTodos();
   },
   deleteTodos:function (order){
     this.todos.splice(order,1);
     this.displayTodos();
+  },
+  toggleCompleted: function (position){
+  var todo= this.todos[position];
+  todo.completed=!todo.completed;
   },
 }
