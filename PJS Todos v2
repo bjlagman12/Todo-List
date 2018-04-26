@@ -26,29 +26,37 @@ function remTodo (order){
   displayTodos();
 }
 
-var todoList= 
-{
-  todos: [],
-  displayTodos: function(){
-    console.log('My Todos',this.todos);
+
+var todoList = {
+  todos:[],
+  displayTodo: function(){
+    if(this.todos.length === 0)
+      {console.log('You have no todos')}
+    else
+      {for (var i = 0; i < this.todos.length; i++)
+        if(this.todos[i].completed === true)
+        {console.log('(x)',this.todos[i].textTodo)}
+        else{(console.log('()',this.todos[i].textTodo))}
+      }
   },
-  addTodos:function(todoText){
+  addTodo: function(textTodo){
     this.todos.push({
-    todoText:todoText,
-    completed: false
+      textTodo:textTodo,
+      completed: false
     });
-    this.displayTodos();
+    this.displayTodo()
   },
-  changeTodos:function (position,todo.Text){
-    this.todos[postion].todoText=todoText;
-    this.displayTodos();
+  changeTodo: function(position,textTodo){
+    this.todos[position].textTodo=textTodo;
+    this.displayTodo();
   },
-  deleteTodos:function (order){
-    this.todos.splice(order,1);
-    this.displayTodos();
+  deleteTodo:function(position){
+    this.todos.splice(position,1);
+    this.displayTodo();
   },
-  toggleCompleted: function (position){
-  var todo= this.todos[position];
-  todo.completed=!todo.completed;
+  toggleCompleted: function(position){
+    var todo= this.todos[position];
+    todo.completed=!todo.completed;
+    this.displayTodo();
   },
 }
