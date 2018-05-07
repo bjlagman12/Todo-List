@@ -1,30 +1,28 @@
-// Code goes here
-var todos= ['item 1','item 2','item 3']
+// var todos = ['item 1', 'item 2', 'item 3']
 
-//display todos
-function displayTodos(){
-  console.log('my todos:',todos);
-}
+// //displaytodo
+// function displayTodo(){
+//   console.log('My todos:', todos);
+// }
 
-//add todos
-function addTodos (newtodo){
-  todos.push(newtodo);
-  displayTodos();
-}
-addTodos('test')
+// //addTodo
+// function addTodo(newtodo){
+//   todos.push(newtodo);
+//   displayTodo()
+// }
 
-//change todos
-function changeTodos (order,newtodo){
-  todos[order]=newtodo;
-  displayTodos();
-}
-changeTodos(0,'changed panda')
+// //changeTodo
+// function changeTodo(position,newtodo){
+//   todos[position]=newtodo;
+//   displayTodo()
+// }
 
-// remove todos
-function remTodo (order){
-  todos.splice(order,1);
-  displayTodos();
-}
+// //deleteTodo
+// function deleteTodo(position){
+//   todos.splice(position)
+//   displayTodo()
+// }
+
 
 var todoList = {
   todos:[],
@@ -58,6 +56,7 @@ var todoList = {
     todo.completed=!todo.completed;
     this.displayTodo();
   },
+  
   toggleAll: function(){
     var totalTodos = this.todos.length;
     var completedTodo = 0;
@@ -68,7 +67,6 @@ var todoList = {
         completedTodo++;
       }
     }
-  
   
    //case 1 if everything is true make everything false
     if (completedTodo===totalTodos){
@@ -87,15 +85,47 @@ var todoList = {
   }
 }
 
-var displayTodosButton=document.getElementById('displaytodosbutton');
-var toggleAllButton=document.getElementById('toggleallbutton')
 
-displayTodosButton.addEventListener('click',function(){
-  todoList.displayTodo()
-});
+var handlers={
+  displayTodos: function(){
+    todoList.displayTodo()
+  },
+  toggleAll: function(){
+    todoList.toggleAll()
+  },
+  addTodo:function(){
+    var addTodoInput=document.getElementById('addTodoInput')
+    todoList.addTodo(addTodoInput.value)
+    addTodoInput.value='';
+  },
+  deleteTodo:function(){
+    var deleteTodoPosition=document.getElementById('deleteTodoPosition')
+    todoList.deleteTodo(deleteTodoPosition.valueAsNumber)
+    deleteTodoPosition.value='';
+  },
+  changeTodo:function(){
+    var changeTodoPosition=document.getElementById('changeTodoPosition')
+    var changeTodoInput=document.getElementById('changeTodoInput')
+    
+    todoList.changeTodo(changeTodoPosition.valueAsNumber,changeTodoInput.value)
+    changeTodoPosition.value=''
+    changeTodoInput.value='';
+  },
+  toggleCompleted:function(){
+    var toggleCompletedPosition=document.getElementById('toggleCompletedPosition')
+    todoList.toggleCompleted(toggleCompletedPosition.valueAsNumber)
+    deleteTodoPosition.value='';
+  },
+};
 
-toggleAllButton.addEventListener('click',function(){
-  todoList.toggleAll()
-})
+
+
+
+
+
+
+
+
+
 
 
